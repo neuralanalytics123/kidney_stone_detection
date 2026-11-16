@@ -1,6 +1,6 @@
 # NephroAI: Enterprise Clinical Kidney Stone Diagnostic & Model Monitoring Suite
 
-## 1. Executive Summary & Clinical Problem Solved
+Project Link : https://kidneystonedetection-qmdu8kbytmpjwgkkn2zcyi.streamlit.app/
 
 **NephroAI** is an advanced, enterprise-grade AI diagnostic tool built specifically for hospitals, emergency rooms, and radiology departments to assist doctors in detecting kidney stones.
 
