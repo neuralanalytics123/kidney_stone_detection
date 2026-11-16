@@ -23,6 +23,11 @@ Trained and validated on a balanced renal imaging corpus comprising **1,787 Non-
 * **Inference Latency:** $< 45\text{ ms}$ per scan on standard CPU/GPU hardware
 
 ---
+<img width="1780" height="955" alt="Screenshot From 2026-11-16 13-57-05" src="https://github.com/user-attachments/assets/9bb7bc76-0e89-40d0-9e1d-9ce32f3bf31b" />
+
+<img width="1762" height="835" alt="Screenshot From 2026-11-16 13-57-36" src="https://github.com/user-attachments/assets/ef8a4ca1-08cb-4d50-b61e-6c838bcc2628" />
+
+
 
 ## 2. Project Structure
 
