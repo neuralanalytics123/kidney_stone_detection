@@ -1,0 +1,7 @@
+{
+  "loss": 0.0598,
+  "accuracy": 0.9822,
+  "sensitivity_recall": 0.9831,
+  "specificity": 0.9814,
+  "f1_score": 0.981
+}

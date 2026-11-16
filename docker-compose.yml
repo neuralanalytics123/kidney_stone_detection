@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  doctor-dashboard:
+    build: .
+    container_name: kidney-stone-doctor-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./data:/app/data
+      - ./dashboard:/app/dashboard
+    command: uv run streamlit run dashboard/app.py --server.port 8501 --server.address 0.0.0.0

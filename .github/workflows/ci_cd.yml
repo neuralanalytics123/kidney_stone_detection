@@ -1,0 +1,44 @@
+name: Enterprise Kidney Stone AI CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  lint-test-and-smoke-train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.11
+        run: uv python install 3.11
+
+      - name: Install Dependencies
+        run: uv sync --all-extras
+
+      - name: Run Linter (Ruff)
+        run: uv run ruff check src tests dashboard
+
+      - name: Run Pytest Unit & API Integration Tests
+        run: uv run pytest -v
+
+      - name: Smoke-Test End-to-End Pipeline (1 Epoch)
+        run: uv run python -m kidney_ai.pipeline --epochs 1
+
+  docker-build-verification:
+    needs: lint-test-and-smoke-train
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Production Docker Image
+        run: docker build -t kidney-stone-enterprise-ai:latest .

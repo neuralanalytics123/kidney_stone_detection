@@ -1,0 +1,37 @@
+[project]
+name = "kidney-stone-enterprise-ai"
+version = "1.0.0"
+description = "Enterprise End-to-End Kidney Stone Detection System for Clinical & Healthcare Experts"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.2.0",
+    "torchvision>=0.17.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "scikit-learn>=1.4.0",
+    "pillow>=10.2.0",
+    "opencv-python-headless>=4.9.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.1",
+    "python-multipart>=0.0.9",
+    "streamlit>=1.32.0",
+    "plotly>=5.19.0",
+    "pydantic>=2.6.0",
+    "pyyaml>=6.0.1",
+    "loguru>=0.7.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
+    "ruff>=0.3.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kidney_ai"]

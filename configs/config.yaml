@@ -1,0 +1,37 @@
+project:
+  name: "KidneyStoneDetection-ClinicalAI"
+  version: "1.0.0"
+  seed: 42
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  classes: ["non-stone", "Stone"] # Case-insensitive matching handled in code
+  image_size: [224, 224]
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+  batch_size: 32
+  num_workers: 2
+
+model:
+  architecture: "resnet50"
+  pretrained: true
+  num_classes: 2
+  dropout_rate: 0.3
+
+training:
+  epochs: 15
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  early_stopping_patience: 4
+
+artifacts:
+  model_dir: "artifacts/models"
+  best_model_name: "kidney_stone_resnet50_best.pt"
+  report_dir: "artifacts/reports"
+
+monitoring:
+  drift_psi_threshold: 0.20
+  confidence_alert_threshold: 0.75
+  log_file: "artifacts/reports/inference_audit_log.jsonl"
