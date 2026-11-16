@@ -1,12 +1,3 @@
-
-"""
-Doctor & Clinical QA Monitoring Dashboard (Streamlit):
-1. Live Diagnostic Co-Pilot: Upload scan -> View probability, Grad-CAM attention heatmap,
-   CLAHE enhanced view, and radiomic intensity features.
-2. Model Performance & Clinical Validation: Confusion Matrix, Sensitivity/Specificity, ROC-AUC.
-3. Production Drift & Audit Monitoring: Confidence distribution, low-confidence human review queue,
-   and scanner intensity drift (PSI).
-"""
 import json
 import time
 from pathlib import Path
