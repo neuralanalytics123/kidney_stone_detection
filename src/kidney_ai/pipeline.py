@@ -1,7 +1,3 @@
-"""
-End-to-End Enterprise Pipeline Entrypoint:
-Executes Data Preprocessing -> Feature Engineering -> Training -> Validation -> Hold-out Testing.
-"""
 import argparse
 from loguru import logger
 from kidney_ai.training.trainer import train_pipeline
